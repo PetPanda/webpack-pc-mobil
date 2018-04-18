@@ -1,1 +1,1 @@
-module.exports = {"PLATFORM":"web","ENV":"DEV"};
+module.exports = {"PLATFORM":"mobile","ENV":"PROD"};
