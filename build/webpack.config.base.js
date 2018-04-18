@@ -1,9 +1,4 @@
-/**
- * @Author: zhaoFinger
- * @Date: 2017-10-14 13:39:57
- * @Last Modified by: zhaoFinger
- * @Last Modified time: 2017-10-28 16:20:52
- */
+
 const path = require('path');
 const fs = require('fs');
 
@@ -31,6 +26,8 @@ HTMLDirs.forEach(page => {
 	entries[page] = path.resolve(__dirname, `../src/js/app/${page}.js`);
 });
 
+let platforms  = process.env.NODE_ENV === 'development-web' ? { 'jquery': '$' } : { 'zepto': '$' }
+
 module.exports = {
 	entry: entries,
 	devtool: 'cheap-module-source-map',
@@ -39,10 +36,7 @@ module.exports = {
 		path: path.resolve(__dirname, '../dist'),
 		publicPath: '/'
 	},
-	externals: {
-		'zepto': '$',
-		'wx': 'jWeixin'
-	},
+	externals: platforms,
 	// 加载器
 	module: {
 		rules: [

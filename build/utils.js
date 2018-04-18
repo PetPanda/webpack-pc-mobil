@@ -1,9 +1,4 @@
-/**
- * @Author: zhaoFinger
- * @Date: 2017-10-14 13:40:19
- * @Last Modified by:   zhaoFinger
- * @Last Modified time: 2017-10-14 13:40:19
- */
+
 const path = require('path');
 const fs = require('fs');
 

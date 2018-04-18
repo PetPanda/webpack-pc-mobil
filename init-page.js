@@ -1,37 +1,30 @@
-/**
- * @Author: zhaoFinger
- * @Date: 2017-10-13 16:21:20
- * @Last Modified by: zhaoFinger
- * @Last Modified time: 2017-10-28 15:27:52
- */
+
 
 const fs = require('fs');
 const inquirer = require('inquirer');
+const rem = require('./build/rem').rem
 
-const generateFile = (fileName, title) => {
-	let html =
-		`<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset='UTF-8'>
-		<title>${title}</title>
-		<meta name='viewport' content='width=750, user-scalable=no, target-densitydpi=device-dpi'>
-	</head>
-	<body>
-		<div class='header'>
-		</div>
-		<div class='content'>
-		</div>
-		<script src='//cdn.bootcss.com/zepto/1.2.0/zepto.min.js'></script>
-		<script src='//res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
-	</body>
-</html>
-`;
+const generateFile = (fileName, title, platform) => {
+	let html =  `<!DOCTYPE html><html><head>
+                  <meta charset='UTF-8'>
+                  <title>${title}</title>
+                  <meta name='viewport' content='width=750, user-scalable=no, target-densitydpi=device-dpi'>
+                  ${platform === 'web' ? '' : '<style type="text/css">html, body {font-size: 100px;}</style><script src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>'}
+                  ${platform === 'web' ? '' : rem }  
+                </head>
+                <body>
+                  <div class='header'>
+                  </div>
+                  <div class='content'>
+                  </div>
+                  ${platform === 'web' ? '<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>' : '<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>'}
+                </body>
+              </html>
+              `;
 
-	let css =
-		`@import 'base.scss';
-@import 'var.scss';
-`;
+	let css = `@import 'base.scss';
+            @import 'var.scss';
+            `;
 
 	let js = `require('../../css/${fileName}.scss');`;
 
@@ -71,8 +64,14 @@ inquirer.prompt([
 		type: 'input',
 		name: 'title',
 		message: 'Please input page title:',
-		default: '赵的拇指'
-	}
+		default: 'title'
+  },
+  {
+		type: 'list',
+		name: 'platform',
+    message: 'Please input which platform:',
+		choices: ['web', 'mobile']
+  },
 ]).then(answers => {
-	generateFile(answers.fileName, answers.title);
+	generateFile(answers.fileName, answers.title, answers.platform);
 });

@@ -1,7 +1,7 @@
 require('../../css/index.scss');
 
-$(function() {
-	$('.test-alert-btn').click(() => {
-		alert('alert 测试');
-	});
-});
+
+$(function () {
+  console.log(222)
+  $('.content').html('woshi')
+})

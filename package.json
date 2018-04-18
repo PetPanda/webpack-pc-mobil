@@ -1,26 +1,23 @@
 {
-	"name": "webpack-multiple-page",
+	"name": "wangsm",
 	"version": "1.0.0",
-	"description": "A project template for multiple page project develop.",
+	"description": "A project ",
 	"main": "index.js",
 	"directories": {
 		"doc": "doc"
 	},
 	"scripts": {
 		"init-page": "node ./init-page.js",
-		"dev": "export NODE_ENV=development && webpack-dev-server --open",
+    "dev:web": "export NODE_ENV=development-web && webpack-dev-server --open",
+		"dev:phone": "export NODE_ENV=development-phone && webpack-dev-server --open",    
 		"build": "export NODE_ENV=production && node ./build/build.js"
 	},
 	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/zhaofinger/webpack-multiple-page.git"
+		"type": "git"
 	},
-	"author": "ZhaoFinger",
+	"author": "wsm",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/zhaofinger/webpack-multiple-page/issues"
-	},
-	"homepage": "https://github.com/zhaofinger/fwebpack-multiple-page#readme",
+	"bugs": {},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
 		"babel-loader": "^7.1.2",
@@ -50,5 +47,8 @@
 		"webpack-dev-server": "^2.9.1",
 		"webpack-merge": "^4.1.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"fastclick": "^1.0.6",
+		"zepto": "^1.2.0"
+	}
 }

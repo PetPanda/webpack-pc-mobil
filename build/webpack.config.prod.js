@@ -1,9 +1,4 @@
-/**
- * @Author: zhaoFinger
- * @Date: 2017-10-14 13:40:06
- * @Last Modified by: zhaoFinger
- * @Last Modified time: 2017-10-28 16:53:22
- */
+
 const webpackBase = require('./webpack.config.base');
 const webpackMerge = require('webpack-merge');
 const webpack = require('webpack');

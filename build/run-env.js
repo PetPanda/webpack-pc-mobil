@@ -1,4 +1,1 @@
-module.exports = {
-  "PLATFORM":"H5",
-  "ENV":"PROD"
-};
+module.exports = {"PLATFORM":"web","ENV":"DEV"};

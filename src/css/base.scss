@@ -1,0 +1,23 @@
+@charset "UTF-8";html body .header .right:after,html body .header:after,html body .top:after {
+  display: block
+}
+
+html body .container .classify .main .items:after,html body .container .classify .title:after,html body .footer:after,html body .header .menubox:after,html body .header .right:after,html body .header .searchbox .bar:after,html body .header .searchbox:after,html body .header:after,html body .navbar ul:after,html body .top:after {
+  content: "\20";
+  clear: both
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent
+}
+
+html {
+  font: 100% 'Microsoft YaHei','Heiti SC',simhei,'Lucida Sans Unicode','Myriad Pro','Hiragino Sans GB',Verdana;
+  width: 100%;
+  overflow-x: hidden
+}
+a {
+  text-decoration: none;
+}

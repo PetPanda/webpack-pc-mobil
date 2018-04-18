@@ -4,6 +4,7 @@ A project template for multiple page project develop.
 
 ## Script
 
-1. `init-page`: create page
-1. `dev`: local develop
-1. `build`: build for prod
+>  `init-page`: create page
+>  `dev:web`: local develop pc端
+>  `dev:phone`: local develop m端
+>  `build`: build for prod

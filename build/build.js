@@ -1,15 +1,3 @@
-/**
- * @Author: zhaoFinger
- * @Date: 2017-10-14 13:40:10
- * @Last Modified by: zhaoFinger
- * @Last Modified time: 2017-10-28 17:13:56
- */
-/**
- * @Author: zhaoFinger
- * @Date: 2017-10-14 13:32:11
- * @Last Modified by: zhaoFinger
- * @Last Modified time: 2017-10-14 13:40:08
- */
 
 const fs = require('fs');
 const inquirer = require('inquirer');
@@ -22,7 +10,7 @@ inquirer.prompt([
 		type: 'list',
 		name: 'PLATFORM',
 		message: 'Please choose build platform:',
-		choices: ['H5', 'IOS', 'ANDROID']
+		choices: ['web', 'mobile']
 	},
 	{
 		type: 'list',
