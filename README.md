@@ -5,6 +5,8 @@
 
 ## Script
 
+`git clone https://github.com/PetPanda/webpack-pc-mobile.git`
+
 1.  `init-page`: 初始化项目
   
 
