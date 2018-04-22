@@ -7,7 +7,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const utils = require('./utils');
-const runEnv = JSON.stringify(require('./run-env'));
 
 // 入口html数组
 let HTMLDirs = utils.getFileNameList('./src/html');
@@ -26,7 +25,7 @@ HTMLDirs.forEach(page => {
 	entries[page] = path.resolve(__dirname, `../src/js/app/${page}.js`);
 });
 
-let platforms  = process.env.NODE_ENV === 'development-web' ? { 'jquery': '$' } : { 'zepto': '$' }
+const platforms  = process.env.NODE_ENV === 'development-web' ? { 'jquery': '$' } : { 'zepto': '$' }
 
 module.exports = {
 	entry: entries,
@@ -50,7 +49,7 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['env']
+						presets: ['es2015', 'stage-0']
 					}
 				}
 			},
@@ -90,15 +89,15 @@ module.exports = {
 			},
 			{
 				test: /\.(html|js|css|scss)$/,
-				loader: `preprocess-loader?${runEnv}`
+				loader: `preprocess-loader`
 			}
 		]
 	},
 	plugins: [
-		// 自动清理 dist 文件夹
-		new CleanWebpackPlugin(['dist'], {
-			root: path.resolve(__dirname, `../`)
-		}),
+    // 自动清理 dist 文件夹
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, `../`)
+    }),
 		// 将 css 抽取到某个文件夹
 		new ExtractTextPlugin({
 			// 生成css文件名

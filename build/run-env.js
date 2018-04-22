@@ -1,1 +1,0 @@
-module.exports = {"PLATFORM":"mobile","ENV":"PROD"};

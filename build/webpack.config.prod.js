@@ -3,6 +3,7 @@ const webpackBase = require('./webpack.config.base');
 const webpackMerge = require('webpack-merge');
 const webpack = require('webpack');
 
+
 // 合并配置文件
 module.exports = webpackMerge(webpackBase, {
 	devtool: false,
@@ -12,12 +13,12 @@ module.exports = webpackMerge(webpackBase, {
 			compress: {
 				warnings: false
 			}
-		}),
+    }),
 		// 提取公共 JavaScript 代码
 		new webpack.optimize.CommonsChunkPlugin({
 			// chunk 名为 commons
 			name: 'commons',
-			filename: '[name].bundle.js'
+			filename: 'js/[name].bundle.js'
 		})
 	]
 });

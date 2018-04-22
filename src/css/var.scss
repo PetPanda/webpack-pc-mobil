@@ -1,0 +1,13 @@
+@mixin flexs($direction:row,$row: center,$column:center){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $row;
+  align-items: $column;
+}
+
+@mixin ani-btnRotate{
+  @keyframes btnRotate{
+      from{transform: rotateZ(1deg);}
+      to{transform: rotateZ(360deg);}
+  }
+}
