@@ -19,8 +19,10 @@ demo.html 生成的移动端项目模板
 
 <img src="./docs/img/html.png" width="600px" height="800px">
 
->  `dev:web`: local develop pc端
->  `dev:phone`: local develop m端
->  `build`: build for prod
+
+
+2. `dev:web`: local develop pc端
+3. `dev:phone`: local develop m端
+4. `build`: 打包编译
 
 
