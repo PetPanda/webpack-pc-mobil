@@ -8,8 +8,8 @@
 	},
 	"scripts": {
 		"init-page": "node ./init-page.js",
-		"dev:web": "export NODE_ENV=development-web && webpack-dev-server --open",
-		"dev:phone": "export NODE_ENV=development-phone && webpack-dev-server --open",
+		"dev:web": "export NODE_ENV=developmentW && webpack-dev-server --open",
+		"dev:phone": "export NODE_ENV=developmentP && webpack-dev-server --open",
 		"build": "export NODE_ENV=production && node ./build/build.js"
 	},
 	"repository": {
@@ -19,7 +19,7 @@
 	"license": "ISC",
 	"bugs": {},
 	"devDependencies": {
-		"babel-core": "^6.26.0",
+		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.4",
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-env": "^1.6.0",
@@ -51,5 +51,7 @@
 		"webpack-dev-server": "^2.9.1",
 		"webpack-merge": "^4.1.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"babel-plugin-transform-runtime": "^6.23.0"
+	}
 }

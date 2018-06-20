@@ -25,7 +25,7 @@ HTMLDirs.forEach(page => {
 	entries[page] = path.resolve(__dirname, `../src/js/app/${page}.js`);
 });
 
-const platforms  = process.env.NODE_ENV === 'development-web' ? { 'jquery': '$' } : { 'zepto': '$' }
+const platforms  = process.env.NODE_ENV === 'developmentW' ? { 'jquery': '$' } : { 'zepto': '$' }
 
 module.exports = {
 	entry: entries,

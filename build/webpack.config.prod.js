@@ -6,7 +6,10 @@ const webpack = require('webpack');
 
 // 合并配置文件
 module.exports = webpackMerge(webpackBase, {
-	devtool: false,
+  devtool: false,
+  output: {
+		publicPath: './' //配置打包编译的路径
+	},
 	plugins: [
 		// 代码压缩
 		new webpack.optimize.UglifyJsPlugin({
