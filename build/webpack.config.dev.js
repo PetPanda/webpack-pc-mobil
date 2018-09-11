@@ -9,6 +9,16 @@ module.exports = webpackMerge(webpackBase, {
 		overlay: {
 			errors: true,
 			warnings: true
-		}
+    },
+    proxy: {
+      '/itings': {
+        target: 'http://192.168.4.175:9090',
+        changeOrigin: true,
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/itings': '/itings'
+        }
+      }  
+    },   
 	}
 });

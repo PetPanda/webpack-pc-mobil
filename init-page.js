@@ -1,11 +1,9 @@
-
-
 const fs = require('fs');
 const inquirer = require('inquirer');
 const rem = require('./build/rem').rem
 
 const generateFile = (fileName, title, platform) => {
-	let html =  `<!DOCTYPE html><html><head>
+  let html = `<!DOCTYPE html><html><head>
                   <meta charset='UTF-8'>
                   <title>${title}</title>
                   <meta name='viewport' content='width=750, user-scalable=no, target-densitydpi=device-dpi'>
@@ -22,56 +20,55 @@ const generateFile = (fileName, title, platform) => {
               </html>
               `;
 
-	let css = `@import 'base.scss';
+  let css = `@import 'base.scss';
             @import 'var.scss';
             `;
 
-	let js = `require('../../css/${fileName}.scss');`;
+  let js = `require('../../css/${fileName}.scss');`;
 
-	fs.writeFile(`./src/html/${fileName}.html`, html, err => {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(`Generate ${fileName}.html file ok!`);
-		}
-	});
+  fs.writeFile(`./src/html/${fileName}.html`, html, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`Generate ${fileName}.html file ok!`);
+    }
+  });
 
-	fs.writeFile(`./src/css/${fileName}.scss`, css, err => {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(`Generate ${fileName}.css file ok!`);
-		}
-	});
+  fs.writeFile(`./src/css/${fileName}.scss`, css, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`Generate ${fileName}.css file ok!`);
+    }
+  });
 
-	fs.writeFile(`./src/js/app/${fileName}.js`, js, err => {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(`Generate ${fileName}.js file ok!`);
-		}
-	});
+  fs.writeFile(`./src/js/app/${fileName}.js`, js, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`Generate ${fileName}.js file ok!`);
+    }
+  });
 };
 
-inquirer.prompt([
-	{
-		type: 'input',
-		name: 'fileName',
-		message: 'Please input page file name:',
-		default: 'index'
-	},
-	{
-		type: 'input',
-		name: 'title',
-		message: 'Please input page title:',
-		default: 'title'
+inquirer.prompt([{
+    type: 'input',
+    name: 'fileName',
+    message: 'Please input page file name:',
+    default: 'index'
   },
   {
-		type: 'list',
-		name: 'platform',
+    type: 'input',
+    name: 'title',
+    message: 'Please input page title:',
+    default: 'title'
+  },
+  {
+    type: 'list',
+    name: 'platform',
     message: 'Please input which platform:',
-		choices: ['web', 'mobile']
+    choices: ['web', 'mobile']
   },
 ]).then(answers => {
-	generateFile(answers.fileName, answers.title, answers.platform);
+  generateFile(answers.fileName, answers.title, answers.platform);
 });

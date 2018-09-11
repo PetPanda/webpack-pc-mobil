@@ -8,8 +8,8 @@ const webpack = require('webpack');
 module.exports = webpackMerge(webpackBase, {
   devtool: false,
   output: {
-		publicPath: './' //配置打包编译的路径
-	},
+    publicPath: './'
+  },
 	plugins: [
 		// 代码压缩
 		new webpack.optimize.UglifyJsPlugin({

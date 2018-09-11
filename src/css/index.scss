@@ -1,3 +1,56 @@
 @import 'base.scss';
-            @import 'var.scss';
-            
+@import 'var.scss';
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+
+@include ani-btnRotate;
+
+.loading {
+  position: fixed;
+  z-index: 888;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  @include flexs(row,center,center);
+  img {
+    width: 0.5rem;
+    height:  0.5rem;
+    transform-origin: center center ;
+    animation: btnRotate 1s 0s linear infinite;
+    }
+}
+
+.content {
+  padding: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  .h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+    margin-top: .3rem;
+  }
+  .main-content {
+    p {
+      color: rgba(64,64,64,1);
+      line-height: .2rem;
+      font-size: inherit;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    width: 100%;
+  }
+}
+.toast {
+  display: none;
+  color: rgb(82, 81, 81);
+  text-align: center;
+}
