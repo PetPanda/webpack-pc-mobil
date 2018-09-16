@@ -39,7 +39,8 @@ $(function () {
     information: $('.information'),
     anchor: $('.anchor'),
     adaptPeople: $('.adapt-people'),
-    receive: $('.receive')
+    receive: $('.receive'),
+    content: $('.content')
   }
 
 
@@ -51,6 +52,15 @@ $(function () {
     async init () {
       await this.fetchEntity()
       this.handleHtml()
+      this.bindEvent()
+    },
+    bindEvent() {
+      data.content.on('click', 'a.moreInfo', methods.handleShowMoreInfo)
+    },
+    handleShowMoreInfo() {
+      const prev = $(this).prev('.main-content')
+      prev.hasClass('active') ? $(this).text('查看更多') : $(this).text('收起')
+      prev.toggleClass('active')
     },
     handleHtml () {
       data.information.html('暂无')

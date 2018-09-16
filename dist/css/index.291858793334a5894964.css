@@ -1,0 +1,87 @@
+html body .header .right:after, html body .header:after, html body .top:after {
+  display: block; }
+
+html body .container .classify .main .items:after, html body .container .classify .title:after, html body .footer:after, html body .header .menubox:after, html body .header .right:after, html body .header .searchbox .bar:after, html body .header .searchbox:after, html body .header:after, html body .navbar ul:after, html body .top:after {
+  content: " ";
+  clear: both; }
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent; }
+
+html {
+  font: 100% 'Microsoft YaHei','Heiti SC',simhei,'Lucida Sans Unicode','Myriad Pro','Hiragino Sans GB',Verdana;
+  width: 100%;
+  height: 100%; }
+
+a {
+  text-decoration: none; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+@keyframes btnRotate {
+  from {
+    transform: rotateZ(1deg); }
+  to {
+    transform: rotateZ(360deg); } }
+
+.loading {
+  position: fixed;
+  z-index: 888;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .loading img {
+    width: 0.5rem;
+    height: 0.5rem;
+    transform-origin: center center;
+    animation: btnRotate 1s 0s linear infinite; }
+
+.content {
+  padding: 20px;
+  font-size: 14px;
+  box-sizing: border-box; }
+  .content .h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+    margin-top: .3rem; }
+  .content .main-content {
+    overflow: hidden;
+    width: 100%;
+    max-height: 200px; }
+    .content .main-content p {
+      color: #404040;
+      line-height: .2rem;
+      font-size: inherit; }
+      .content .main-content p img {
+        width: 100%;
+        height: auto; }
+  .content .active {
+    max-height: none; }
+  .content .moreInfo {
+    display: block;
+    width: 1.3rem;
+    height: 0.28rem;
+    text-align: center;
+    line-height: .28rem;
+    border-radius: 3px;
+    opacity: 0.608;
+    color: #979797;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    margin: 0.15rem auto; }
+
+.toast {
+  display: none;
+  color: #525151;
+  text-align: center; }
